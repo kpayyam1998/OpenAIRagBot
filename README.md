@@ -1,3 +1,5 @@
+```bash
+
 rag-bot-backend/
 │
 ├── app/
@@ -31,3 +33,5 @@ rag-bot-backend/
 
 
 Project structure
+
+```bash
