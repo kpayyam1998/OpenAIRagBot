@@ -1,10 +1,11 @@
 from langchain_community.vectorstores import FAISS
+from langchain.embeddings import OpenAIEmbeddings
 
 from app.exceptions import RetrievalError
 
 class VectorDB:
-    def __init__(self, embeddings=None ):
-        self.embeddings = embeddings
+    def __init__(self ):
+        self.embeddings = OpenAIEmbeddings()
         self.vector_index = None
 
     def _createvectorDB(self , docs):

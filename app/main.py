@@ -22,7 +22,7 @@ class RAGBot:
         
         docs = self.docuement_ingestor.ingest_document(urls)
 
-        embeddings = self.embedding_creator.embed_document(docs)
+        #embeddings = self.embedding_creator.embed_document(docs)
 
         # Create VectorDB
         self.vector_db._createvectorDB(docs)
