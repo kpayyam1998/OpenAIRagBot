@@ -31,4 +31,3 @@ rag-bot-backend/
 └── app.py                     # Main entry point to run the server
 
 Project structure
-```bash
