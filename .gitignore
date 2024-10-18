@@ -1,2 +1,4 @@
 .env
 research/credicard
+creditcardbot.egg-info
+__pycache__

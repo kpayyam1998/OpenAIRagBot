@@ -11,7 +11,7 @@ class VectorDB:
         """Creates a vector index from document embeddings."""
         try:
             self.vector_index = FAISS.from_documents(docs,self.embeddings)
-            self.vector_index.save_local("creditcard_db")
+            self.vector_index.save_local("creditcarddb")
         except Exception as e:
             raise RetrievalError(f"Failed to create vector index: {str(e)}")
         

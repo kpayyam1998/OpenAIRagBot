@@ -9,7 +9,7 @@ class QueryRequest(BaseModel):
 
 def validationDocumentIngestion(data):
     try:
-        DocumentIngestionRequest(**data)
+        DocumentIngestionRequest(data)
         #return True
     except PydanticValidationError as e:
         raise ValidationError(f"Document ingestion validation error: {e}")
