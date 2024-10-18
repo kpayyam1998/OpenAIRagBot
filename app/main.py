@@ -11,8 +11,10 @@ class RAGBot:
     def __init__(self):
         self.embedding_creator = OpenAIEmbeddingProcessor()
         self.docuement_ingestor = DocumentIngestor(self.embedding_creator)
-        self.vector_db = VectorDB(self.embedding_creator)
+        self.vector_db = VectorDB()
         self.response_generator = ResponseGenerator()
+        self.result=None
+        self.source=None
 
     def _ingestDocument(self, urls:list):
 
@@ -34,18 +36,20 @@ class RAGBot:
             raise ValidationError("Question is required")
 
         # Validate the query
-        validationQueryRequest({"question": question})
+        #validationQueryRequest({"question": question})
 
         # Embed the query
-        query_embedding = self.embedding_creator.embed_query(question)
+        #query_embedding = self.embedding_creator.embed_query(question)
 
         # Retrieve relevant documents from vector DB
-        self.vector_db._load_index()
-        relevant_docs = self.vector_db.retrieve(query_embedding)
+        #self.vector_db._load_index()
+        retriever = self.vector_db._retrieve()
 
         # Generate the response using the retrieved documents
-        response = self.response_generator.generate_response(question, self.vector_db.vector_index)
-        return response
+        self.result,self.source=self.vector_db._finalResults(retriever,question)
+        
+        #response = self.response_generator.generate_response(question, self.vector_db.vector_index)
+        return self.result
 
 
 if __name__ == "__main__":
