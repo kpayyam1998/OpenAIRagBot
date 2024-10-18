@@ -1,5 +1,4 @@
 ```bash
-
 rag-bot-backend/
 │
 ├── app/
@@ -31,7 +30,5 @@ rag-bot-backend/
 ├── .env                       # API keys and environment variables
 └── app.py                     # Main entry point to run the server
 
-
 Project structure
-
 ```bash
