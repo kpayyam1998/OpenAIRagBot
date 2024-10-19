@@ -15,9 +15,9 @@ class DocumentIngestor(DocumentProcessor):
 
     def ingest_document(self, urls):
 
-        validationDocumentIngestion(urls)
+        #validationDocumentIngestion(urls)
 
-        loader = UnstructuredURLLoader(urls)
+        loader = UnstructuredURLLoader(urls=urls)
         documents = loader.load()
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=0)
         docs = text_splitter.split_documents(documents)

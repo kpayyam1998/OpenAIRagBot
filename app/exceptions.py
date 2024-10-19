@@ -1,8 +1,8 @@
-class RAGBotException(Exception):
-    pass
+# class RAGBotException(Exception):
+#     pass
 
-class ValidationError(RAGBotException):
-    pass
+# class ValidationError(RAGBotException):
+#     pass
 
-class RetrievalError(RAGBotException):
-    pass
+# class RetrievalError(RAGBotException):
+#     pass
